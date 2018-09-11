@@ -20,12 +20,16 @@ class Object
 		Object(b2World* map, Shape shape, char type, b2Vec2 size, b2Vec2 pos, sf::Color color, float index = 0);
 		~Object();
 
+		bool checkCol(sf::Vector2f pos);
 		void update();
+
+
 		std::vector<sf::Vertex>		m_pShape;
 		sf::RectangleShape			m_rBody;
 		sf::CircleShape				m_cBody;
 		sf::Transform				m_trans;
 		char						m_type;
+		sf::Color					m_dColor;
 
 		b2Body*				m_fix;
 		b2PolygonShape		m_polygon;

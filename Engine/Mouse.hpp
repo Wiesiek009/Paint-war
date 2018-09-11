@@ -6,6 +6,14 @@
 #include "Render.hpp"
 #include "Object.hpp"
 
+enum Operation
+{
+	softMove,
+	hardMove,
+	freeze,
+	spawn
+};
+
 class Mouse
 {
 	public:
@@ -16,8 +24,10 @@ class Mouse
 		void update();
 		void info();
 		void events(sf::Event& event);
-		void createBox();
-		void createCircle();
+		void softMove();
+		void hardMove();
+		void freeze();
+		void spawn();
 
 	private:
 
@@ -31,4 +41,7 @@ class Mouse
 		sf::CircleShape		m_ghostC;
 
 		bool				m_show = 1;
+		bool				m_hold = 0;
+		Object*				m_holdingObj = nullptr;
+		Operation			m_operation = Operation::softMove;
 };

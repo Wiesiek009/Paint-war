@@ -17,9 +17,7 @@ class Render
 		void addObject(sf::Text* text);
 		void draw();
 
-	private:
-
-		sf::RenderWindow*			m_window;
 		std::vector<Object*>		m_objects;
+		sf::RenderWindow*			m_window;
 		sf::Text*					m_text;
 };

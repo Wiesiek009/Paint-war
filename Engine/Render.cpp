@@ -32,9 +32,9 @@ void Render::addObject(std::vector<Object*> objects)
 
 void Render::draw()
 {
-	m_window->clear();
+	m_window->clear(sf::Color(50, 50, 50));
 
-	m_window->draw(*m_text);
+	//m_window->draw(*m_text);
 
 	for (int i = 0; i < m_objects.size(); i++)
 	{

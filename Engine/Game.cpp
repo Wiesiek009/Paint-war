@@ -44,10 +44,11 @@ void Game::mainLoop()
 
 		if (m_pause)
 		{
-			m_mouse.update();
 			m_player.update(m_delta);
 			update();
 		}
+
+		m_mouse.update();
 
 		m_render->draw();
 
